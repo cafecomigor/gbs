@@ -6,7 +6,7 @@
 <title>GBS — Manual da Marca</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #142840;
@@ -65,7 +65,7 @@
   .hero-shield { width: min(230px, 55vw); height: auto; margin-bottom: 24px; filter: drop-shadow(0 18px 30px rgba(20,40,64,0.18)); }
   .hero h1 {
     font-size: clamp(2.6rem, 8vw, 4.4rem);
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 0.01em;
     color: var(--navy);
   }
@@ -83,15 +83,14 @@
   }
 
   .build {
-    background: var(--navy);
+    background: #fff;
+    border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: clamp(32px, 6vw, 64px);
-    color: #fff;
   }
   .build-head { text-align: center; max-width: 620px; margin: 0 auto 36px; }
-  .build-head .eyebrow { color: #8FA7CE; }
-  .build-head h2 { color: #fff; font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 700; }
-  .build-head p { color: #B9C2D6; margin-top: 12px; }
+  .build-head h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 700; }
+  .build-head p { margin-top: 12px; }
 
   .build-scene { width: min(360px, 82%); margin: 0 auto; }
   .build-scene svg { width: 100%; height: auto; display: block; overflow: visible; }
@@ -129,26 +128,31 @@
 
   .replay {
     display: block; margin: 28px auto 0;
-    background: transparent; border: 1px solid rgba(255,255,255,0.3);
-    color: #fff; padding: 10px 22px; border-radius: 999px;
+    background: transparent; border: 1px solid var(--line);
+    color: var(--navy); padding: 10px 22px; border-radius: 999px;
     font-family: inherit; font-weight: 600; font-size: 0.8rem;
     letter-spacing: 0.05em; cursor: pointer;
   }
-  .replay:hover { background: rgba(255,255,255,0.1); }
+  .replay:hover { background: var(--paper-alt); }
 
   .build-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px; }
   .build-step {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
     border-radius: 12px; padding: 16px 14px;
     transition: background .3s ease, border-color .3s ease;
   }
-  .build-step.active { background: rgba(255,255,255,0.14); border-color: #6FA0FF; }
-  .build-step .num { font-weight: 800; font-size: 1.2rem; color: #6FA0FF; display: block; margin-bottom: 6px; }
-  .build-step h4 { margin: 0 0 4px; font-size: 0.85rem; color: #fff; }
-  .build-step p { margin: 0; font-size: 0.76rem; color: #AEB8CC; line-height: 1.4; }
+  .build-step.active { background: #fff; border-color: var(--navy); }
+  .build-step .num { font-weight: 800; font-size: 1.2rem; color: var(--navy); display: block; margin-bottom: 6px; }
+  .build-step h4 { margin: 0 0 4px; font-size: 0.85rem; color: var(--ink); }
+  .build-step p { margin: 0; font-size: 0.76rem; color: var(--ink-dim); line-height: 1.4; }
 
   @media (max-width: 640px) { .build-steps { grid-template-columns: repeat(2, 1fr); } }
+
+  .why-shield { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .why-text { flex: 1; min-width: 280px; }
+  .why-text p { margin-top: 12px; max-width: 520px; }
+  .why-shield-icon { width: 150px; height: auto; flex-shrink: 0; margin: 0 auto; filter: drop-shadow(0 14px 24px rgba(20,40,64,0.15)); }
 
   .concept-flow { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
   .concept-node { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; text-align: center; min-width: 140px; }
@@ -166,14 +170,6 @@
   .swatch-info .src { font-size: 0.7rem; color: var(--gray-tint); margin-top: 4px; }
 
   .type-block { margin-top: 32px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(20px,4vw,36px); }
-  .type-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 18px; margin-top: 20px; }
-  .type-card { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
-  .type-card.match { border-color: var(--navy); box-shadow: 0 0 0 1px var(--navy) inset; }
-  .type-card .tag { font-size: 0.68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); }
-  .type-card.match .tag { color: var(--navy); }
-  .type-card .sample-caps { font-size: 1.5rem; font-weight: 700; margin-top: 8px; color: var(--ink); }
-  .type-card .sample-word { font-size: 1.15rem; margin-top: 2px; color: var(--ink-dim); }
-  .ref-specimen { max-width: 100%; height: auto; border-radius: 8px; margin-top: 18px; border: 1px solid var(--line); }
   .type-note { margin-top: 18px; font-size: 0.82rem; background: var(--paper-alt); border-radius: 10px; padding: 14px 16px; color: var(--ink-dim); }
 
   .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 22px; margin-top: 32px; }
@@ -181,6 +177,9 @@
   .app-card svg { width: 100%; max-width: 190px; height: auto; margin-bottom: 16px; }
   .app-card .app-name { font-weight: 700; font-size: 0.9rem; }
   .app-note { margin-top: 26px; font-size: 0.85rem; background: var(--paper-alt); border-radius: 12px; padding: 18px 20px; color: var(--ink-dim); }
+  .app-feature { margin-top: 32px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+  .app-feature img { width: 100%; height: auto; display: block; }
+  .app-subhead { margin-top: 40px; font-weight: 700; font-size: 0.95rem; color: var(--ink); }
 
   footer { text-align: center; padding: 40px 24px 60px; color: var(--gray); font-size: 0.78rem; letter-spacing: 0.04em; }
 </style>
@@ -206,10 +205,10 @@
   <div class="wrap">
     <div class="nav-mark">GBS</div>
     <div class="nav-links">
-      <a href="#construcao">Construção</a>
       <a href="#conceito">Conceito</a>
-      <a href="#paleta">Paleta</a>
+      <a href="#construcao">Construção</a>
       <a href="#tipografia">Tipografia</a>
+      <a href="#paleta">Paleta</a>
       <a href="#aplicacoes">Aplicações</a>
     </div>
   </div>
@@ -220,7 +219,27 @@
     <svg class="hero-shield" viewBox="0 0 804 696"><use href="#gbsMark" width="804" height="696"/></svg>
     <h1>GBS</h1>
     <div class="sub">Grupo Brasil Serviços</div>
-    <p class="lede">Manual de marca — a identidade visual do GBS, apresentada a partir do material real de desenvolvimento que vocês enviaram: do monograma solto ao brasão final.</p>
+    <p class="lede">Manual de marca — a identidade visual oficial do GBS: conceito, tipografia, cores e aplicações.</p>
+  </div>
+</section>
+
+<section id="conceito">
+  <div class="wrap">
+    <div class="why-shield">
+      <div class="why-text">
+        <span class="eyebrow">Conceito</span>
+        <h2>Segurança em forma de escudo</h2>
+        <p>O GBS presta serviços de segurança — e não existe símbolo mais universal para transmitir proteção do que um escudo. Por isso, a marca nasce da fusão das iniciais G, B e S em um monograma integrado, que assume a própria forma de um escudo: solidez, defesa e confiança em um único símbolo.</p>
+      </div>
+      <svg class="why-shield-icon" viewBox="0 0 804 696"><use href="#gbsMark" width="804" height="696"/></svg>
+    </div>
+    <div class="concept-flow">
+      <div class="concept-node"><div class="big">G + B + S</div><div class="small">Iniciais soltas</div></div>
+      <div class="concept-arrow">→</div>
+      <div class="concept-node"><div class="big">GBS</div><div class="small">Monograma integrado</div></div>
+      <div class="concept-arrow">→</div>
+      <div class="concept-node"><svg viewBox="0 0 804 696"><use href="#gbsMark" width="804" height="696"/></svg><div class="small">Escudo</div></div>
+    </div>
   </div>
 </section>
 
@@ -228,8 +247,8 @@
   <div class="wrap build">
     <div class="build-head">
       <span class="eyebrow">Manual da marca</span>
-      <h2>A construção da marca</h2>
-      <p>O próprio monograma oficial do GBS se organizando dentro do escudo — vetor extraído do material que vocês enviaram.</p>
+      <h2>Como o escudo se forma</h2>
+      <p>As letras G, B e S se organizam para compor o brasão do GBS — cada uma ocupando seu espaço dentro do escudo, até formar o monograma final.</p>
     </div>
 
     <div class="build-scene" id="buildScene">
@@ -251,17 +270,15 @@
   </div>
 </section>
 
-<section id="conceito">
+<section id="tipografia">
   <div class="wrap">
-    <span class="eyebrow">Conceito</span>
-    <h2>Do monograma ao brasão</h2>
-    <p style="margin-top:10px; max-width:560px;">A marca nasce da fusão das iniciais G, B e S — Grupo Brasil Serviços — organizadas em um monograma integrado, que assume a forma de um escudo: solidez, proteção e confiança.</p>
-    <div class="concept-flow">
-      <div class="concept-node"><div class="big">G + B + S</div><div class="small">Iniciais soltas</div></div>
-      <div class="concept-arrow">→</div>
-      <div class="concept-node"><div class="big">GBS</div><div class="small">Monograma integrado</div></div>
-      <div class="concept-arrow">→</div>
-      <div class="concept-node"><svg viewBox="0 0 804 696"><use href="#gbsMark" width="804" height="696"/></svg><div class="small">Escudo</div></div>
+    <span class="eyebrow">Identidade</span>
+    <h2>Tipografia</h2>
+    <p style="margin-top:10px;">A tipografia oficial da marca GBS é a Poppins.</p>
+    <div class="type-block">
+      <div class="sample-caps" style="font-family:'Poppins';font-weight:800;font-size:clamp(2rem,5vw,2.8rem);color:var(--ink);">ABCDEFGHIJKLM</div>
+      <div class="sample-word" style="font-family:'Poppins';font-weight:500;font-size:1.4rem;margin-top:8px;color:var(--ink-dim);">Grupo Brasil Serviços</div>
+      <div class="type-note">Sua construção geométrica e os traços firmes — especialmente nos pesos Bold e Black usados no nome da marca — transmitem solidez e modernidade, qualidades centrais para uma marca de segurança. É também uma fonte de altíssima legibilidade, o que reforça a clareza e a transparência que o GBS preza em sua comunicação.</div>
     </div>
   </div>
 </section>
@@ -270,46 +287,20 @@
   <div class="wrap">
     <span class="eyebrow">Identidade</span>
     <h2>Paleta de cores</h2>
-    <p style="margin-top:10px;">Cores medidas por amostragem de pixel diretamente no material enviado (logo + swatches do manual), não estimadas visualmente.</p>
+    <p style="margin-top:10px;">Duas cores sustentam toda a identidade visual do GBS, escolhidas pelo que comunicam.</p>
     <div class="palette-grid">
       <div class="swatch">
         <div class="swatch-color" style="background:var(--navy)"></div>
-        <div class="swatch-info"><div class="name">Azul Marinho</div><div class="hex">#142840</div><div class="src">medido no swatch + na letra B do logo</div></div>
+        <div class="swatch-info"><div class="name">Azul Marinho</div><div class="hex">#142840</div><div class="src">Confiança, autoridade e proteção — a cor mais usada por instituições de segurança e financeiras em todo o mundo.</div></div>
       </div>
       <div class="swatch">
         <div class="swatch-color" style="background:var(--gray)"></div>
-        <div class="swatch-info"><div class="name">Cinza</div><div class="hex">#3F4346</div><div class="src">medido no swatch + nas letras G/S do logo</div></div>
+        <div class="swatch-info"><div class="name">Cinza</div><div class="hex">#3F4346</div><div class="src">Neutralidade, equilíbrio e tecnologia — reforça o caráter técnico e profissional da operação.</div></div>
       </div>
       <div class="swatch">
         <div class="swatch-color" style="background:#fff; border-bottom:1px solid var(--line)"></div>
-        <div class="swatch-info"><div class="name">Branco</div><div class="hex">#FFFFFF</div><div class="src">fundo / negativo</div></div>
+        <div class="swatch-info"><div class="name">Branco</div><div class="hex">#FFFFFF</div><div class="src">Clareza e transparência.</div></div>
       </div>
-    </div>
-    <div class="type-note">Se vocês tiverem os códigos hex exatos do arquivo original (Illustrator/Figma), me enviem para eu confirmar com 100% de precisão — o que está aqui foi medido pixel a pixel na imagem, o que pode variar ±1-2 tons por compressão JPEG.</div>
-  </div>
-</section>
-
-<section id="tipografia">
-  <div class="wrap">
-    <span class="eyebrow">Identidade</span>
-    <h2>Tipografia</h2>
-    <p style="margin-top:10px;">Analisei as letras do manual enviado (formato do G, do M, das curvas) para identificar a fonte — do mesmo jeito que fiz com as cores.</p>
-    <div class="type-block">
-      <div class="tag" style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);">Referência enviada por você</div>
-      <img class="ref-specimen" src="assets/type-reference.png" alt="Especime de tipografia do manual enviado">
-      <div class="type-compare">
-        <div class="type-card match">
-          <div class="tag">Melhor correspondência — Poppins (Google Fonts)</div>
-          <div class="sample-caps" style="font-family:'Poppins';font-weight:700;">ABCDEFGHIJKLM</div>
-          <div class="sample-word" style="font-family:'Poppins';font-weight:500;">Grupo Brasil Serviços</div>
-        </div>
-        <div class="type-card">
-          <div class="tag">Alternativa próxima — Montserrat</div>
-          <div class="sample-caps" style="font-family:'Montserrat';font-weight:800;">ABCDEFGHIJKLM</div>
-          <div class="sample-word" style="font-family:'Montserrat';font-weight:600;">Grupo Brasil Serviços</div>
-        </div>
-      </div>
-      <div class="type-note">Pelo corte geométrico, o "M" com hastes retas (não abertas) e o "G" com o pequeno esporão reto, a fonte bate com <strong>Poppins</strong> (peso Bold/SemiBold para títulos, Regular/Medium para texto) — gratuita no Google Fonts, já aplicada neste site inteiro. Como o manual foi gerado por IA, pode não vir de um arquivo de fonte real único — confirme visualmente comparando os dois cartões acima com a imagem de referência, ou me envie o arquivo da fonte (.otf/.ttf) se já tiverem uma definida.</div>
     </div>
   </div>
 </section>
@@ -318,7 +309,11 @@
   <div class="wrap">
     <span class="eyebrow">Aplicações</span>
     <h2>A marca em uso</h2>
-    <p style="margin-top:10px;">Mockups vetoriais simples usando o logo real (não formas genéricas) — bons para ver proporção e recorte da marca em diferentes fundos.</p>
+    <p style="margin-top:10px;">Simulações de aplicação da marca em diferentes materiais e superfícies.</p>
+    <div class="app-feature">
+      <img src="assets/logo-3d.jpg" alt="Render 3D do brasão GBS">
+    </div>
+    <div class="app-subhead">Aplicações da marca</div>
     <div class="app-grid">
       <div class="app-card">
         <svg viewBox="0 0 220 220">
@@ -354,7 +349,7 @@
         <div class="app-name">Veículo / adesivo</div>
       </div>
     </div>
-    <div class="app-note">Estes mockups já usam o vetor real do logo (extraído por rastreamento do material enviado), não formas inventadas — mas ainda são simples/planos, não fotorrealistas. Para mockups fotorrealistas (roupa vestida em modelo, carro real, ambiente gerado por IA), preciso de uma ferramenta externa de geração de imagem (ex: Midjourney, Leonardo.Ai, ChatGPT/Sora Images, Canva Magic Media) — gerem lá com o vetor/PNG do logo como referência e me enviem que eu incorporo aqui.</div>
+    <div class="app-note">Use sempre a versão branca (negativa) da marca sobre fundos escuros, e a versão colorida sobre fundos claros — como nos exemplos acima.</div>
   </div>
 </section>
 
